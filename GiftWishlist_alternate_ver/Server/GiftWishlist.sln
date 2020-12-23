@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftWishlist.Web", "GiftWishlist.Web\GiftWishlist.Web.csproj", "{37FE7A27-D4D5-4421-BB74-4DB06A2A675D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftWishlist.Data", "GiftWishlist.Data\GiftWishlist.Data.csproj", "{BCF67C99-3733-4483-9475-D1276875E7A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftWishlist.Services", "GiftWishlist.Services\GiftWishlist.Services.csproj", "{255FD649-F45D-4ACA-A917-E9B2C8F47017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37FE7A27-D4D5-4421-BB74-4DB06A2A675D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FE7A27-D4D5-4421-BB74-4DB06A2A675D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FE7A27-D4D5-4421-BB74-4DB06A2A675D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FE7A27-D4D5-4421-BB74-4DB06A2A675D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF67C99-3733-4483-9475-D1276875E7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF67C99-3733-4483-9475-D1276875E7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF67C99-3733-4483-9475-D1276875E7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF67C99-3733-4483-9475-D1276875E7A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{255FD649-F45D-4ACA-A917-E9B2C8F47017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255FD649-F45D-4ACA-A917-E9B2C8F47017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255FD649-F45D-4ACA-A917-E9B2C8F47017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255FD649-F45D-4ACA-A917-E9B2C8F47017}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
