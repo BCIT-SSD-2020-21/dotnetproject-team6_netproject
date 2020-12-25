@@ -19,19 +19,30 @@ namespace GiftWishlist.Data
         
         // Seed Wishlist
         
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     base.OnModelCreating(modelBuilder);
-        //     modelBuilder.Entity<Product>().HasData(new Product
-        //     {
-        //         Id = 1,
-        //         Name = "Test Product 1",
-        //         Description = "Test Product 1 description",
-        //         Price = 10.10M,
-        //         IsTaxable = true,
-        //         IsArchived = false
-        //     });
-        // }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Item>().HasData(new Item()
+            {
+                Id = 1,
+                Name = "Test Item 1",
+                Description = "Test Item 1 description",
+                Price = 10.10M,
+                ImageUrl = "http://placehold.it/750x500",
+                ImageThumbnailUrl = "http://placehold.it/500x300"
+            });
+            
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Item>().HasData(new Item()
+            {
+                Id = 2,
+                Name = "Test Item 2",
+                Description = "Test Item 2 description",
+                Price = 100M,
+                ImageUrl = "http://placehold.it/750x500",
+                ImageThumbnailUrl = "http://placehold.it/500x300"
+            });
+        }
 
     }
 }

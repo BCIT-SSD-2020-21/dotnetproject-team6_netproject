@@ -32,7 +32,7 @@ namespace GiftWishlist.Web
             services.AddDbContext<WishlistDbContext>(opts =>
             {
                 opts.EnableDetailedErrors();
-                opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                opts.UseSqlServer(Configuration.GetConnectionString("GiftWishlist.dev"));
             });
             
             services.AddTransient<IItemService, ItemService>();

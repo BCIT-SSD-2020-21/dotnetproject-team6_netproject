@@ -18,8 +18,8 @@ namespace GiftWishlist.Services.Wishlist
             _db = dbContext;
             _logger = logger;
         }
-        
-        
+
+
         public List<ItemWishlist> GetCurrentWishlist()
         {
             return _db.ItemWishlists
@@ -36,22 +36,70 @@ namespace GiftWishlist.Services.Wishlist
                     .First(wish => wish.Item.Id == id);
 
                 wishlist.QuantityOnHand += adjustment;
+
+                try
+                {
+                    CreateSnapshot(wishlist);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError("Error creating wishlist snapshot");
+                    _logger.LogError(e.StackTrace);
+                }
+
+                _db.SaveChanges();
+
+                return new ServiceResponse<ItemWishlist>
+                {
+                    IsSuccess = true,
+                    Data = wishlist,
+                    Message = $"Item {id} wishlist adjusted",
+                    Time = DateTime.UtcNow
+                };
             }
-            catch (Exception e)
+            catch
             {
-                Console.WriteLine(e);
-                throw;
+                return new ServiceResponse<ItemWishlist>
+                {
+                    IsSuccess = false,
+                    Data = null,
+                    Message = "Error updating product inventory quantityonhand",
+                    Time = DateTime.UtcNow
+                };
             }
+
         }
 
         public ItemWishlist GetByItemId(int itemId)
         {
-            throw new System.NotImplementedException();
+            return _db.ItemWishlists
+                .Include(wi => wi.Item)
+                .FirstOrDefault(wi => wi.Item.Id == itemId);
         }
 
         public List<ItemWishlistSnapshot> GetSnapshotHistory()
         {
-            throw new System.NotImplementedException();
+            var earliest = DateTime.UtcNow - TimeSpan.FromHours(6);
+
+            return _db.ItemWishlistSnapshots
+                .Include(snap => snap.Item)
+                .ToList();
+        }
+
+
+        private void CreateSnapshot(ItemWishlist wishlist)
+        {
+            var now = DateTime.UtcNow;
+
+            var snapshot = new ItemWishlistSnapshot
+            {
+                SnapshotTime = now,
+                Item = wishlist.Item,
+                QuantityOnHand = wishlist.QuantityOnHand
+            };
+
+            _db.Add(snapshot);
+
         }
     }
 }
