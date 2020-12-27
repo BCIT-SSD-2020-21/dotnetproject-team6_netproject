@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>GiftWishlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/checkbox-delete.css">
+    <link rel="stylesheet" href="assets/css/checkbox.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/OcOrato---Login-form-1.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/wishlist.css">
+</head>
+
+<body>
+    <h3>Your Wishlists</h3>
+    <div class="mx-auto" style="max-width: 1080px;">
+        <div class="row no-gutters row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 mx-auto">
+            <div class="col filtr-item" data-category="1">
+                <div class="card">
+                    <div class="card-body">
+                        <p>My 2020 Wishlist<br></p>
+                        <div class="d-flex align-items-lg-end align-items-xl-end">
+                            <div class="tag tag-private" style="text-align: center;"><span>Private</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col filtr-item" data-category="1">
+                <div class="card">
+                    <div class="card-body">
+                        <p>SecretSanta - Coworkers Ltd<br></p>
+                        <div class="d-flex align-items-lg-end align-items-xl-end">
+                            <div class="tag tag-group" style="text-align: center;"><span>Group</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row no-gutters row-cols-2 footer">
+                <div class="col text-center"><button class="btn" type="button">Search</button></div>
+                <div class="col text-center"><button class="btn" type="button" data-toggle="modal" data-target="#modal-1">Create</button>
+                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1" style="padding: 8px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="container" style="background: #16a2b8;">
+                                    <div class="modal-header" style="border-bottom-style: none;padding: 0;padding-left: 16px;">
+                                        <h4 class="modal-title">Create Wishlist</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    </div>
+                                    <div class="modal-body" style="text-align: left;padding-bottom: 30px;">
+                                        <form id="form" style="font-family: Quicksand, sans-serif;width: 320px;">
+                                            <div class="form-group"><label>Name (*)</label><input class="form-control formum" type="text" placeholder="BestWishListEver"></div>
+                                            <div class="form-group"><label>Password</label><input class="form-control formum" type="password" placeholder="password" required=""></div>
+                                            <div class="form-group"><label>Due Date</label><input class="form-control" type="date"></div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer" style="border-top-style: none;"><label class="w-100" style="text-align: left;">*Required</label>
+                                        <div class="d-flex align-items-center w-100"><button class="btn" type="button" data-dismiss="modal">Cancel</button>
+                                            <div class="d-flex flex-grow-1 justify-content-end"><button class="btn" type="button">Create</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
