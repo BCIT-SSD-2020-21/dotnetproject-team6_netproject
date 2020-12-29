@@ -4,14 +4,16 @@ using GiftWishlist.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GiftWishlist.Data.Migrations
 {
     [DbContext(typeof(WishlistDbContext))]
-    partial class WishlistDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201227213848_AddArchive")]
+    partial class AddArchive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

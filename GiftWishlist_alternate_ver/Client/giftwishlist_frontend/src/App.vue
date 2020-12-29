@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!--    <div class="app-menu">-->
+<!--      <side-menu />-->
+<!--    </div>-->
+    <div class="app-content">
+      <router-view />
+    </div>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import SideMenu from "@/components/SideMenu.vue";
 
-export default {
-  name: 'App',
+@Component({
+  name: "App",
   components: {
-    HelloWorld
+    SideMenu
   }
-}
+})
+export default class App extends Vue {}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import "./src/assets/scss/global.scss";
+
 </style>

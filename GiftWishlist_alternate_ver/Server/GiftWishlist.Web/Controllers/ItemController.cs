@@ -43,6 +43,15 @@ namespace GiftWishlist.Web.Controllers
             var newItemResponse = _itemService.CreateItem(newItem);
             return Ok(newItemResponse);
         }
+        
+        [HttpPatch("/api/items/{id}")]
+        public ActionResult ArchiveProduct(int id)
+        {
+            _logger.LogInformation("Archiving item");
+            var archiveResult = _itemService.ArchiveItem(id);
+            return Ok(archiveResult);
+
+        }
 
     }
 }

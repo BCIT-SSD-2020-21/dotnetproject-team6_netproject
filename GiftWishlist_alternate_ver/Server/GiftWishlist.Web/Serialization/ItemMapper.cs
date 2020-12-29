@@ -1,7 +1,7 @@
 ﻿using GiftWishlist.Data.Models;
 using GiftWishlist.Web.ViewModels;
 
-namespace GiftWishlist.Web.Serialization
+namespace GiftWishlist.Web.Serialization    
 {
     public static class ItemMapper
     {
@@ -14,7 +14,8 @@ namespace GiftWishlist.Web.Serialization
                 Description = item.Description,
                 Price = item.Price,
                 ImageUrl = item.ImageUrl,
-                ImageThumbnailUrl = item.ImageThumbnailUrl
+                ImageThumbnailUrl = item.ImageThumbnailUrl,
+                IsArchived = item.IsArchived
             };
         }
         

@@ -11,5 +11,6 @@ namespace GiftWishlist.Data.Models
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public string ImageThumbnailUrl { get; set; }
+        public bool IsArchived { get; set; }
     }
 }

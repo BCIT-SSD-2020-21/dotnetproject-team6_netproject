@@ -62,6 +62,33 @@ namespace GiftWishlist.Services.Item
                 };
             }
         }
-        
+
+        public ServiceResponse<Data.Models.Item> ArchiveItem(int id)
+        {
+            try
+            {
+                var product = _db.Items.Find(id);
+                product.IsArchived = true;
+                _db.SaveChanges();
+
+                return new ServiceResponse<Data.Models.Item>
+                {
+                    Data = product,
+                    Time = DateTime.UtcNow,
+                    Message = "Item archived",
+                    IsSuccess = true
+                };
+            }
+            catch (Exception e)
+            {
+                return new ServiceResponse<Data.Models.Item>
+                {
+                    Data = null,
+                    Time = DateTime.UtcNow,
+                    Message = e.StackTrace,
+                    IsSuccess = false
+                };
+            }        
+        }
     }
 }

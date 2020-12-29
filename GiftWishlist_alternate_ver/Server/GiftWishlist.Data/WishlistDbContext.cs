@@ -29,7 +29,8 @@ namespace GiftWishlist.Data
                 Description = "Test Item 1 description",
                 Price = 10.10M,
                 ImageUrl = "http://placehold.it/750x500",
-                ImageThumbnailUrl = "http://placehold.it/500x300"
+                ImageThumbnailUrl = "http://placehold.it/500x300",
+                IsArchived = false
             });
             
             base.OnModelCreating(modelBuilder);
@@ -40,7 +41,8 @@ namespace GiftWishlist.Data
                 Description = "Test Item 2 description",
                 Price = 100M,
                 ImageUrl = "http://placehold.it/750x500",
-                ImageThumbnailUrl = "http://placehold.it/500x300"
+                ImageThumbnailUrl = "http://placehold.it/500x300",
+                IsArchived = false
             });
         }
 

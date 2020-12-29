@@ -24,6 +24,7 @@ namespace GiftWishlist.Services.Wishlist
         {
             return _db.ItemWishlists
                 .Include(iw => iw.Item)
+                .Where(pi => !pi.Item.IsArchived)
                 .ToList();
         }
 
@@ -83,6 +84,7 @@ namespace GiftWishlist.Services.Wishlist
 
             return _db.ItemWishlistSnapshots
                 .Include(snap => snap.Item)
+                .Where(snap => snap.SnapshotTime > earliest && !snap.Item.IsArchived)
                 .ToList();
         }
 
